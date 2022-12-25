@@ -15,15 +15,15 @@ public class CustIntTests
         {
             builder.ConfigureServices(services =>
             {
-                // ²¾°£­ì¦³µù¥UªA°È¡A´«¦¨¦Û­qª©¥»
+                // ç§»é™¤åŸæœ‰è¨»å†Šæœå‹™ï¼Œæ›æˆè‡ªè¨‚ç‰ˆæœ¬
                 var svcDesc = services.FirstOrDefault(s => s.ServiceType == typeof(GuidService));
                 if (svcDesc != null) services.Remove(svcDesc);
                 services.AddSingleton<GuidService>((services) => new GuidService("TEST"));
 
-                // §ó§ï³]©w­È
+                // æ›´æ”¹è¨­å®šå€¼
                 svcDesc = services.First(s => s.ServiceType == typeof(IConfiguration));
                 services.Remove(svcDesc);
-                // Åª¨ú­ì³]©wÀÉ¡A¨Ã­×§ï Code
+                // è®€å–åŸè¨­å®šæª”ï¼Œä¸¦ä¿®æ”¹ Code
                 var config = new ConfigurationBuilder()
                     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                     .AddInMemoryCollection(new Dictionary<string, string>() {
