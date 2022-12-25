@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Mvc.Testing;
 namespace WebApi.Test
 {
     /// <summary>
-    /// Refer to : https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-7.0
+    /// Refer to :
+    /// https://blog.darkthread.net/blog/testing-min-api/
+    /// https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-7.0
     /// </summary>
     [TestFixture]
     public class IntegrationTests
